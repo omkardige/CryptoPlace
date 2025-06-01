@@ -1,0 +1,10 @@
+.progress-bar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.progress-bar p{
+    font-size: 24px;
+}
