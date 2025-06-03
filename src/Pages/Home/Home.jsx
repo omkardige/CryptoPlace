@@ -8,7 +8,7 @@ const Home = () => {
     const { allCoins, Currency } = useContext(CoinContext);
     const [showCoin, setshowCoin] = useState([]);
     const [Input, setInput] = useState("")
-    const[page,setpage]=useState(1)
+    const [page, setpage] = useState(1)
     useEffect(() => {
         setshowCoin(allCoins)
     }, [allCoins])
@@ -47,46 +47,42 @@ const Home = () => {
                     <p style={{ textAlign: 'right' }}>Market Cap</p>
                 </div>
 
-
-                
                 {
-                    (showCoin)?(
-                    showCoin.slice((page-1)*10,(page-1)*10+10).map((item, index) => {
-                        return <div >
-                            <Link to={`/coin/${item.id}`} className='table-layout' key={index}>
-                                <p>{item.market_cap_rank}</p>
-                                <div>
-                                    <img src={item.image} alt='cryptoImage'></img>
-                                    <p>{item.name + '-' + item.symbol}</p>
+                    
+                        showCoin.slice((page - 1) * 10, (page - 1) * 10 + 10).map((item, index) => {
+                            return <div >
+                                <Link to={`/coin/${item.id}`} className='table-layout' key={index}>
+                                    <p>{item.market_cap_rank}</p>
+                                    <div>
+                                        <img src={item.image} alt='cryptoImage'></img>
+                                        <p>{item.name + '-' + item.symbol}</p>
+                                    </div>
+                                    <p >{Currency.symbol} {item.current_price.toLocaleString()}</p>
+                                    <p className={item.price_change_percentage_24h > 0 ? 'Green' : 'Red'} style={{ textAlign: "center" }}>{Math.floor(item.price_change_percentage_24h * 100) / 100}%</p>
+                                    <p style={{ textAlign: 'right' }}>{Currency.symbol + item.market_cap.toLocaleString()}</p>
+                                </Link>
                                 </div>
-                                <p >{Currency.symbol} {item.current_price.toLocaleString()}</p>
-                                <p className={item.price_change_percentage_24h > 0 ? 'Green' : 'Red'} style={{ textAlign: "center" }}>{Math.floor(item.price_change_percentage_24h * 100) / 100}%</p>
-                                <p style={{ textAlign: 'right' }}>{Currency.symbol + item.market_cap.toLocaleString()}</p>
-                            </Link>
+                                
 
-
-                        </div>
-
-                    })
-                ): 
-                <h2>No data Found..!</h2>
+                        })
+              
                 }
-             
+
             </div>
-            
-                <div className="parent-container-pagination">
-                 <Stack spacing={10}>
-                    <Pagination className="Pagination"count={showCoin.length/10}  size="large" sx={{button:{color: 'gold'}}} variant="outlined" color="primary"
-                    onChange={(_,value)=>{
-                        setpage(value);
-                        window.scroll(0,300)
-                    }}>
+
+            <div className="parent-container-pagination">
+                <Stack spacing={10}>
+                    <Pagination className="Pagination" count={showCoin.length / 10} size="large" sx={{ button: { color: 'gold' } }} variant="outlined" color="primary"
+                        onChange={(_, value) => {
+                            setpage(value);
+                            window.scroll(0, 300)
+                        }}>
 
                     </Pagination>
                 </Stack>
             </div>
-              
-            
+
+
 
         </div>
     )

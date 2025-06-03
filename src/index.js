@@ -1,12 +1,14 @@
-
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import CoinContextProvider from './Context/CoinContext';
 import './index.css';
 import App from './App';
+import { lazy } from 'react';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './Pages/Home/Home';
-import Coin from './Pages/Coin/Coin';
-import CoinContextProvider from './Context/CoinContext';
+const Home = lazy(()=>import('./Pages/Home/Home'));
+const Coin = lazy(()=>import('./Pages/Coin/Coin'));
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,22 +22,18 @@ const appRoute = createBrowserRouter([
         element: <Coin />
       },
       {
-        path:'/',
-        element:<Home/>,
+        path: '/',
+        element: <Home />
       }
 
     ]
   },
-
-
-
-
 ])
 root.render(
   <CoinContextProvider>
-  <RouterProvider router={appRoute}>
-    
-  </RouterProvider>
+      <RouterProvider router={appRoute}>
+        <App />
+      </RouterProvider>
   </CoinContextProvider>
 
 );
