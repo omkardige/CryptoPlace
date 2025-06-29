@@ -13,9 +13,15 @@ const Coin = () => {
   console.log(Id);
 
   const fetchData = async () => {
-    const data = await fetch(URL_COINID + Id, options);
+    try{
+       const data = await fetch(URL_COINID + Id, options);
     const json = await data.json();
     setresult(json)
+    }
+    catch(error){
+      console.log(error)
+    }
+   
   }
 
   useEffect(() => {

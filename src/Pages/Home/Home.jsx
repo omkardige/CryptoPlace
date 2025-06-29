@@ -4,6 +4,7 @@ import { CoinContext } from '../../Context/CoinContext';
 import { Link } from 'react-router-dom';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { options } from '../../Constants/Constants';
 const Home = () => {
     const { allCoins, Currency } = useContext(CoinContext);
     const [showCoin, setshowCoin] = useState([]);
@@ -26,9 +27,11 @@ const Home = () => {
         })
         setshowCoin(filteredCoins);
 
-    }
-    return (
 
+    }
+ 
+    return (
+       
         <div className='home'>
             <div className="hero">
                 <h1>Larget <br />Crypto Marketplace</h1>
@@ -46,9 +49,7 @@ const Home = () => {
                     <p style={{ textAlign: "center" }}>24H Change</p>
                     <p style={{ textAlign: 'right' }}>Market Cap</p>
                 </div>
-
                 {
-                    
                         showCoin.slice((page - 1) * 10, (page - 1) * 10 + 10).map((item, index) => {
                             return <div >
                                 <Link to={`/coin/${item.id}`} className='table-layout' key={index}>
@@ -65,8 +66,12 @@ const Home = () => {
                                 
 
                         })
+                        
+                            
+                       
               
                 }
+             
 
             </div>
 

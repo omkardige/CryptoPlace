@@ -119,3 +119,81 @@
     text-align: left;
   }
 }
+@media (max-width: 768px) {
+  .coin-name {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .coin-name p b {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .coin-name img {
+    max-width: 70px;
+  }
+
+  .coin-info,
+  .coin-chart {
+    padding: 1rem;
+    margin: 1rem 10px;
+    box-shadow: none;
+    font-size: 0.95rem;
+  }
+
+  .coin-info ul {
+    grid-template-columns: 1fr;
+  }
+
+  .coin-info li {
+    text-align: left !important;
+    padding: 5px 0;
+  }
+
+  .spinner {
+    height: 50vh;
+  }
+
+  .spin {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+
+  .progress-bar p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coin-name {
+    gap: 15px;
+    margin-top: 50px;
+  }
+
+  .coin-name p b {
+    font-size: 26px;
+  }
+
+  .coin-info,
+  .coin-chart {
+    padding: 0.8rem;
+    margin: 1rem 8px;
+  }
+
+  .coin-info ul {
+    row-gap: 0.75rem;
+  }
+
+  .progress-bar {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .progress-bar p {
+    font-size: 18px;
+  }
+}
+

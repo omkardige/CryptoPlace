@@ -17,3 +17,24 @@
     transform: rotate(360deg);
   }
 }
+.rotate-prompt {
+  display: none;
+}
+@media screen and (orientation: portrait) {
+  .rotate-prompt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000cc;
+    color: white;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+  }
+}

@@ -50,7 +50,13 @@ const LineChart = ({Currency,Id}) => {
   }
   else{
     return (
+      
   <div className="line-chart-container">
+    {window.innerWidth < 768 && window.innerHeight > window.innerWidth && (
+  <div className="rotate-prompt">
+    <p>Please rotate your device for the best graph experience 📱↪️</p>
+  </div>
+)}
     <Line
       data={{
         labels: chartdata.map((coin) => {
@@ -72,6 +78,7 @@ const LineChart = ({Currency,Id}) => {
       }}
       options={{
         responsive: true,
+        maintainAspectRatio: true,
         elements: {
           point: {
             radius: 1,

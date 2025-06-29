@@ -70,10 +70,12 @@
 }
 .table-layout .Green{
     color:green;
+    font-weight: 400;
 
 }
 .table-layout .Red{
     color:Red;
+    font-weight: 400;
 
 }
 .Pagination {
@@ -90,3 +92,90 @@
     border-radius:0px 0px 0px 10px;
     
 }
+/* ------------------- RESPONSIVE ------------------- */
+
+@media (max-width: 768px) {
+  .hero {
+    margin: 40px auto;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .hero form {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .hero input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .hero button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .crypto-table {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+
+  .table-layout {
+    font-size: 14px;
+    padding: 12px;
+    grid-template-columns: 0.5fr 2fr 1.2fr 1fr 1.5fr;
+    min-width: 650px; /* keep table scrollable on small screens */
+  }
+
+  .table-layout img {
+    width: 25px;
+  }
+
+  .Pagination {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero input {
+    font-size: 14px;
+  }
+
+  .hero button {
+    font-size: 14px;
+  }
+
+  .table-layout {
+    font-size: 13px;
+    padding: 10px;
+    min-width: 600px;
+  }
+
+  .parent-container-pagination {
+    border-radius: 0;
+  }
+}
+

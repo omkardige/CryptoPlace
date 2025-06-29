@@ -4,6 +4,7 @@ import logo from '../../assets/logo.png'
 import arrow_icon from '../../assets/arrow_icon.png'
 import { Link } from 'react-router-dom'
 import { CoinContext } from '../../Context/CoinContext'
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const {setCurrency} = useContext(CoinContext)
@@ -23,6 +24,11 @@ const Navbar = () => {
   }
   return (
     <div className='navbar'>
+      <div className='hamburger'>
+        <GiHamburgerMenu />
+      </div>
+      
+      
       <img src={logo} alt='logo' className='navbar-logo'></img>
       <ul>
         <li>
